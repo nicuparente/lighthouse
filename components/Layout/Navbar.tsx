@@ -42,7 +42,7 @@ const Navbar = (props) => {
               {user? 
                   <Avatar size='md' marginX="5px" name='Nicu Parente' src={user.picture} />
               :
-                <Button marginX="5px" as="a" size="lg" colorScheme="yellow">
+                <Button marginX="5px" as="a" size="lg" variant="outline" textColor="white" >
                   Login
                 </Button>
               }
