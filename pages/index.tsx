@@ -26,34 +26,31 @@ export default function Home() {
             src={LightHouseLogo}
             alt="Lighthouse Logo"
           />
-          <Box>
-            <Heading marginY="20px" width="100%" textAlign="center">See some of our members ready to help</Heading>
           
             {isValidating ? 
                 <Center>
                     <CircularProgress  isIndeterminate color='yellow.500'/> 
                 </Center>
                 :
-                <Flex flexDir="column" >
+                <Flex width="inherit" flexDir="column" alignItems="center" minWidth="290px" maxWidth="50vw" >
+                    <Heading marginY="20px" size="md" textAlign="center" textOverflow="clip">Here are some of our members that are ready to chat!</Heading>
                      {userConnections.userProfiles.map((connectionProfile,index) =>{
-                        return <Flex key={index} marginTop="20px" p="5" borderRadius="md"  minWidth="320px" boxShadow="lg"  borderWidth="1px" >
-                          <Flex  flexDirection="column" marginLeft="10px" minWidth="320px" maxWidth="100%">
-                            <Flex alignItems="center" minWidth="320px">
-                              <Avatar size='xl' name={`${connectionProfile.firstName} ${connectionProfile.lastName}`} src={connectionProfile.profileImage} />
+                        return <Flex overflowWrap="break-word" key={index} width="90%" marginTop="20px" p='5' maxWidth="720px" borderWidth="1px" >
+                          <Flex  flexDirection="column" marginLeft="10px" maxWidth="90%">
+                            <Flex alignItems="center">
+                              <Avatar size='md' name={`${connectionProfile.firstName} ${connectionProfile.lastName}`} src={connectionProfile.profileImage} />
                               <Box marginLeft="10px">
-                                <Heading size="lg"  lineHeight="short">
+                                <Heading size="md"  lineHeight="short">
                                   {connectionProfile.firstName} {connectionProfile.lastName}
                                 </Heading>
                               </Box>
                             </Flex>
-                            <Box>
                               <Text marginY="20px" fontSize="lg" fontWeight="semibold" lineHeight="short">
                                   About Me
                               </Text>
-                              <Text marginY="5px" minWidth="320px" width="100%">
+                              <Text marginY="5px"  width="100%">
                                {connectionProfile.aboutMe}
                               </Text>
-                          </Box>
                         </Flex>  
                       </Flex>
                       })
@@ -62,15 +59,13 @@ export default function Home() {
                 <Center>
                   <NextLink href="/connect">
                     <Button margin="20px" width="200px" size="lg" colorScheme="yellow" >
-                      Connect
+                      Show More
                     </Button>
                   </NextLink> 
                 </Center>
                
               </Flex>
-            }
-          </Box>
-          
+            }          
       </VStack>
     </>
   );

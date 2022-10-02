@@ -10,10 +10,7 @@ const UserCalendar = (props) =>{
 
     const {user, calendarType, calendarLink} = props;
 
-    //User is not logged in
-    if(!user) return ;
-
-    return  <Box maxWidth="400px" minHeight="400px" minWidth="320px" width="100%" height="100%">
+    return  <Box alignSelf="center" marginY="10px" maxWidth="400px" minHeight="400px" minWidth="300px" width="100%" height="100%">
        {user? 
        <InlineWidget 
          styles={{height: '400px', width:'100%'}} 

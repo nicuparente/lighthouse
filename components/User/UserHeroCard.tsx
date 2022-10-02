@@ -29,12 +29,11 @@ const UserHeroCard = (props) =>{
     const router = useRouter();
     const connectionProfile: UserProfile = props.user;
 
-    console.log(user)
     return (
-        <Box marginY="10px" maxWidth="1080px" width="100%">
-            <Flex p="5" borderRadius="md"  minWidth="320px" boxShadow="lg"  borderWidth="1px" width="100%" flexWrap={["wrap","wrap","nowrap","nowrap"]} >
+        <Box marginY="10px" minWidth="300px" maxWidth="1080px" width="100%">
+            <Flex p="5" borderRadius="md"  minWidth="300px" boxShadow="md"  borderWidth="1px" width="100%"  flexDir={["column", "column","row"]} >
               <Flex  flexDirection="column" marginLeft="10px" minWidth="320px" maxWidth="75%">
-                  <Flex alignItems="center" minWidth="320px">
+                  <Flex alignItems="center" minWidth="300px">
                     <Avatar size='xl' name={`${connectionProfile.firstName} ${connectionProfile.lastName}`} src={connectionProfile.profileImage} />
                     <Box marginLeft="10px">
                       <Heading size="lg"  lineHeight="short">
@@ -47,7 +46,7 @@ const UserHeroCard = (props) =>{
                     <Text marginTop="20px" fontSize="lg" fontWeight="semibold" lineHeight="short">
                         About Me
                     </Text>
-                    <Text marginY="5px" minWidth="320px" width="90%">
+                    <Text marginY="5px" minWidth="300px" width="90%">
                      {connectionProfile.aboutMe}
                     </Text>
 

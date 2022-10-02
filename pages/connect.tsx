@@ -12,22 +12,19 @@ const Connect = (props) => {
 
     return <>
         <Flex 
-         minWidth="100%"
          maxWidth="1080px"
          minHeight="100%"
          flexDirection="column"
          alignItems="stretch"
          >
-            <Center marginY="20px">
-                <Heading>Lets spark some conversations. </Heading>
-            </Center>
             
             {isValidating ? 
                 <Center>
                     <CircularProgress  isIndeterminate color='yellow.500'/> 
                 </Center>
                 :
-                <Flex flexDir="column">
+                <Flex flexDir="column" alignItems="center">
+                    <Heading size="lg">Lets spark some conversations. </Heading>
                      {userConnections.userProfiles.map( (userProfile, index) =>{
                         return <UserHeroCard user={userProfile} key={userProfile.id}/>
                     })}

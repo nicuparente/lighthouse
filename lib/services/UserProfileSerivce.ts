@@ -1,7 +1,6 @@
 import prisma from "../util/prisma";
 import { UserProfile } from "@prisma/client";
-var AuthenticationClient = require('auth0').AuthenticationClient;
-
+import logger from "../util/logger";
 export class UserProfileResult {
     operation: string = "";
     userProfile: UserProfile = null;
@@ -12,7 +11,6 @@ export class UserProfileResult {
 export const getUserByEmail = async (email:string) =>{
     const result: UserProfileResult = new UserProfileResult();
     result.operation = "getUserByEmail";
-
     try{
         result.userProfile = await prisma.userProfile.findUnique({
             where: {
